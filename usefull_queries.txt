@@ -1,0 +1,9 @@
+to get self medication for user
+
+select meds.name, symptoms.description from (self_medication left join meds on self_medication.meds_id = meds.id) left join symptoms on self_medication.symptoms_id = symptoms.id where self_medication.added_by = 1
+
+$database->query("select meds.name, symptoms.description from (self_medication left join meds on self_medication.meds_id = meds.id) left join symptoms on self_medication.symptoms_id = symptoms.id where self_medication.added_by = 1
+;");
+ 
+$data = $database->query("SELECT email FROM account")->fetchAll();
+print_r($data);
